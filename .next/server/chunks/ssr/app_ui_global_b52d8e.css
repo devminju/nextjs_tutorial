@@ -700,6 +700,10 @@ select {
   height: 100%;
 }
 
+.h-screen {
+  height: 100vh;
+}
+
 .min-h-screen {
   min-height: 100vh;
 }
@@ -784,12 +788,20 @@ select {
   flex: 1;
 }
 
+.flex-none {
+  flex: none;
+}
+
 .flex-shrink-0 {
   flex-shrink: 0;
 }
 
 .shrink-0 {
   flex-shrink: 0;
+}
+
+.flex-grow {
+  flex-grow: 1;
 }
 
 .grow {
@@ -1067,6 +1079,11 @@ select {
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 
+.bg-sky-100 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(224 242 254 / var(--tw-bg-opacity));
+}
+
 .p-2 {
   padding: .5rem;
 }
@@ -1310,6 +1327,11 @@ select {
 .text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+.text-blue-600 {
+  --tw-text-opacity: 1;
+  color: rgb(47 111 235 / var(--tw-text-opacity));
 }
 
 .antialiased {
@@ -1576,6 +1598,10 @@ input[type="number"]::-webkit-outer-spin-button {
     width: 1.5rem;
   }
 
+  .md\:w-64 {
+    width: 16rem;
+  }
+
   .md\:flex-none {
     flex: none;
   }
@@ -1612,12 +1638,24 @@ input[type="number"]::-webkit-outer-spin-button {
     margin-bottom: calc(.5rem * var(--tw-space-y-reverse));
   }
 
+  .md\:overflow-hidden {
+    overflow: hidden;
+  }
+
+  .md\:overflow-y-auto {
+    overflow-y: auto;
+  }
+
   .md\:p-2 {
     padding: .5rem;
   }
 
   .md\:p-6 {
     padding: 1.5rem;
+  }
+
+  .md\:p-12 {
+    padding: 3rem;
   }
 
   .md\:px-2 {
@@ -1670,10 +1708,6 @@ input[type="number"]::-webkit-outer-spin-button {
 }
 
 @media (width >= 1024px) {
-  .lg\:block {
-    display: block;
-  }
-
   .lg\:grid-cols-4 {
     grid-template-columns: repeat(4, minmax(0, 1fr));
   }
