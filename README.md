@@ -55,12 +55,11 @@ For more information, see the [course curriculum](https://nextjs.org/learn) on t
 **Server Component**
 
 - **Rendering**
-  최초 렌더링: SSR, CSR
-  (server 측)
-
+최초 렌더링: SSR, CSR
+    (server 측)
 1.  React에서 RSC Payload 사용해서 server component 렌더링
 2.  Next.js 가 RSC Payload, client component의 js 사용하여 HTML 렌더링
-    (client 측)
+    (아래 부터 client 측)
 3.  HTML에서 미리보기 화면 보여줌
 4.  RSC Payload 사용해 server component, client component 합치고, DOM 업데이트
 5.  js 명령어 사용해 client component 동적으로 작동하도록 함, DOM에 event listener 연결, 상호작용 가능한 UI 만듦
