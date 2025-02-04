@@ -54,22 +54,18 @@ For more information, see the [course curriculum](https://nextjs.org/learn) on t
    - **Server Component**
 
    - **Rendering**
-
-   1. 최초 렌더링: SSR, CSR
-      (server 측)
-
-      1. React에서 RSC Payload 사용해서 server component 렌더링
-      2. Next.js 가 RSC Payload, client component의 js 사용하여 HTML 렌더링
-         (아래 부터 client 측)
-      3. HTML에서 미리보기 화면 보여줌
-      4. RSC Payload 사용해 server component, client component 합치고, DOM 업데이트
-      5. js 명령어 사용해 client component 동적으로 작동하도록 함, DOM에 event listener 연결, 상호작용 가능한 UI 만듦
-
-   2. 최초 렌더링 이후: CSR
-      client component js bundle이 다운로드 되면 파싱 후 RSC Payload 사용하여 client component와 server component 합치고, DOM 에 업데이트
-
-- RSC Playload
-  server component 트리 구조의 바이너리 파일. client component 참조가 포함되어있음.
+     1. 최초 렌더링: SSR, CSR
+        (server 측)
+        1. React에서 RSC Payload 사용해서 server component 렌더링
+        2. Next.js 가 RSC Payload, client component의 js 사용하여 HTML 렌더링
+           (아래 부터 client 측)
+        3. HTML에서 미리보기 화면 보여줌
+        4. RSC Payload 사용해 server component, client component 합치고, DOM 업데이트
+        5. js 명령어 사용해 client component 동적으로 작동하도록 함, DOM에 event listener 연결, 상호작용 가능한 UI 만듦
+     2. 최초 렌더링 이후: CSR
+        client component js bundle이 다운로드 되면 파싱 후 RSC Payload 사용하여 client component와 server component 합치고, DOM 에 업데이트
+     - RSC Playload
+       server component 트리 구조의 바이너리 파일. client component 참조가 포함되어있음.
 
 ### Ch.6 DataBase Settings
 
@@ -82,3 +78,38 @@ For more information, see the [course curriculum](https://nextjs.org/learn) on t
 - Vercel Storage: vercel의 database 서비스. 서버리스 방식으로 동작
   4종류 DB 제공: Vercel KV, Vercel Postgres, Vercel Blob, Vercel Edge Config
 - Vercel Postgres: PostgreSQL 기반 관계형 데이터베이스
+
+### Ch.7 [Fetching Data](https://nextjs.org/learn/dashboard-app/fetching-data)
+
+1. 데이터 가져오는 방법
+
+   1. API Layer
+
+      - Next.js의 **API Routes (pages/api/)**를 이용해 백엔드 API를 생성하고, 클라이언트에서 이를 호출하여 데이터를 가져오는 방식
+      - 사용하는 경우: API를 제공하는 타사 서비스를 사용하는 경우, DB 보안이 중요한 경우
+      - 클라이언트, 서버 간 역할 명확히 구분, API 호출이 추가되므로 성능이 다소 저하될 수 있음
+
+   2. Database queries
+
+      - Next.js의 API Routes에서 데이터베이스와 상호작용시 사용
+      - Server Components 에서 데이터베이스와 상호작용시 사용
+      - 클라이언트에서 직접 DB에 접근하는 것은 보안상 위험하므로, 항상 서버 측에서 처리 해야함
+
+   3. Server Components 사용
+
+      - Next.js 13부터 도입된 Server Components를 사용하여 서버에서 직접 데이터를 가져오는 방식
+      - API 계층 없이 데이터베이스에 데이터를 불러와 렌더링할 수 있어 성능 향상
+      - JavaScript Promises를 지원. 다른 data fetching 라이브러리 사용하지 않고 async/await 사용 가능 (useEffect, useState 사용 불필요)
+
+   4. SQL 사용
+
+2. Request Waterfalls
+
+   - 여러개의 네트워크 요청이 순차적으로 실행되는 상황 의미 e.g. await를 연이어 사용하는 경우
+   - 사용하는 경우: 이전 요청의 값이 다음 요청에 사용되는 경우
+     e.g. id를 가져오는 api 호출 후 -> id를 사용해 정보를 조회하는 api 호출
+   - 단점: 총 요청시간이 증가함 -> 병렬 데이터 페칭 사용
+
+3. 병렬 데이터 페칭
+   - 모든 데이터 요청을 동시에 하는 방법
+   - js에서 Promise.all() 또는 Promise.allSettled() 사용
