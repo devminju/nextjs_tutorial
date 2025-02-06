@@ -562,14 +562,14 @@ async function fetchRevenue() {
     try {
         // Artificially delay a response for demo purposes.
         // Don't do this in production :)
-        // console.log('Fetching revenue data...');
-        // await new Promise((resolve) => setTimeout(resolve, 3000));
+        console.log("Fetching revenue data...");
+        await new Promise((resolve)=>setTimeout(resolve, 3000));
         const data = await __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f40$vercel$2b$postgres$40$0$2e$8$2e$0$2f$node_modules$2f40$vercel$2f$postgres$2f$dist$2f$chunk$2d$WDBQYBZQ$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__$3c$locals$3e$__["sql"]`SELECT * FROM revenue`;
-        // console.log('Data fetch completed after 3 seconds.');
+        console.log("Data fetch completed after 3 seconds.");
         return data.rows;
     } catch (error) {
-        console.error('Database Error:', error);
-        throw new Error('Failed to fetch revenue data.');
+        console.error("Database Error:", error);
+        throw new Error("Failed to fetch revenue data.");
     }
 }
 async function fetchLatestInvoices() {
@@ -586,8 +586,8 @@ async function fetchLatestInvoices() {
             }));
         return latestInvoices;
     } catch (error) {
-        console.error('Database Error:', error);
-        throw new Error('Failed to fetch the latest invoices.');
+        console.error("Database Error:", error);
+        throw new Error("Failed to fetch the latest invoices.");
     }
 }
 async function fetchCardData() {
@@ -606,10 +606,10 @@ async function fetchCardData() {
             customerCountPromise,
             invoiceStatusPromise
         ]);
-        const numberOfInvoices = Number(data[0].rows[0].count ?? '0');
-        const numberOfCustomers = Number(data[1].rows[0].count ?? '0');
-        const totalPaidInvoices = (0, __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$lib$2f$utils$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["formatCurrency"])(data[2].rows[0].paid ?? '0');
-        const totalPendingInvoices = (0, __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$lib$2f$utils$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["formatCurrency"])(data[2].rows[0].pending ?? '0');
+        const numberOfInvoices = Number(data[0].rows[0].count ?? "0");
+        const numberOfCustomers = Number(data[1].rows[0].count ?? "0");
+        const totalPaidInvoices = (0, __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$lib$2f$utils$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["formatCurrency"])(data[2].rows[0].paid ?? "0");
+        const totalPendingInvoices = (0, __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$lib$2f$utils$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["formatCurrency"])(data[2].rows[0].pending ?? "0");
         return {
             numberOfCustomers,
             numberOfInvoices,
@@ -617,8 +617,8 @@ async function fetchCardData() {
             totalPendingInvoices
         };
     } catch (error) {
-        console.error('Database Error:', error);
-        throw new Error('Failed to fetch card data.');
+        console.error("Database Error:", error);
+        throw new Error("Failed to fetch card data.");
     }
 }
 const ITEMS_PER_PAGE = 6;
@@ -647,8 +647,8 @@ async function fetchFilteredInvoices(query, currentPage) {
     `;
         return invoices.rows;
     } catch (error) {
-        console.error('Database Error:', error);
-        throw new Error('Failed to fetch invoices.');
+        console.error("Database Error:", error);
+        throw new Error("Failed to fetch invoices.");
     }
 }
 async function fetchInvoicesPages(query) {
@@ -666,8 +666,8 @@ async function fetchInvoicesPages(query) {
         const totalPages = Math.ceil(Number(count.rows[0].count) / ITEMS_PER_PAGE);
         return totalPages;
     } catch (error) {
-        console.error('Database Error:', error);
-        throw new Error('Failed to fetch total number of invoices.');
+        console.error("Database Error:", error);
+        throw new Error("Failed to fetch total number of invoices.");
     }
 }
 async function fetchInvoiceById(id) {
@@ -688,8 +688,8 @@ async function fetchInvoiceById(id) {
             }));
         return invoice[0];
     } catch (error) {
-        console.error('Database Error:', error);
-        throw new Error('Failed to fetch invoice.');
+        console.error("Database Error:", error);
+        throw new Error("Failed to fetch invoice.");
     }
 }
 async function fetchCustomers() {
@@ -704,8 +704,8 @@ async function fetchCustomers() {
         const customers = data.rows;
         return customers;
     } catch (err) {
-        console.error('Database Error:', err);
-        throw new Error('Failed to fetch all customers.');
+        console.error("Database Error:", err);
+        throw new Error("Failed to fetch all customers.");
     }
 }
 async function fetchFilteredCustomers(query) {
@@ -734,8 +734,8 @@ async function fetchFilteredCustomers(query) {
             }));
         return customers;
     } catch (err) {
-        console.error('Database Error:', err);
-        throw new Error('Failed to fetch customer table.');
+        console.error("Database Error:", err);
+        throw new Error("Failed to fetch customer table.");
     }
 }
 }}),
