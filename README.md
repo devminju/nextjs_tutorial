@@ -111,6 +111,7 @@ For more information, see the [course curriculum](https://nextjs.org/learn) on t
    - 단점: 총 요청시간이 증가함 -> 병렬 데이터 페칭 사용
 
 3. 병렬 데이터 페칭
+
    - 모든 데이터 요청을 동시에 하는 방법
    - js에서 Promise.all() 또는 Promise.allSettled() 사용
 
@@ -131,6 +132,7 @@ For more information, see the [course curriculum](https://nextjs.org/learn) on t
      - 정기적으로 업데이트 되거나, 사용자별 데이터가 있는 경우에 적합히지 않음
 
 2. 동적 렌더링
+
    - 데이터 제공 및 렌더링 시점: 사용자 요청시
    - 데이터 변경: 항상 최신 데이터 제공
    - 사용 예시
@@ -138,4 +140,39 @@ For more information, see the [course curriculum](https://nextjs.org/learn) on t
      - 사용자별 맞춤 데이터 (e.g.: 로그인한 사용자의 대시보드)
      - 요청마다 다른 데이터를 제공해야 하는 경우 (e.g. 검색 기능)
      - 요청 시간 정보: 쿠키나 URL 검색 매개변수 등 요청 시점에서만 알 수 있는 정보
-   - 단점: 애플리케이션의 속도가 가장 느린 데이터 요청 속도에 따라 결정됨
+   - 단점: 애플리케이션의 속도가 가장 느린 데이터 요청 속도에 따라 결정됨 (ch.8의 스트리밍으로 개선 가능)
+
+### Ch.8 [Streaming](https://nextjs.org/learn/dashboard-app/streaming)
+
+- 페이지를 한번에 렌더링 하는 것 대신, 'chunk' 단위로 나눈 후 각 chunk를 점진적으로 렌더링 하는 방식
+- 느린 데이터 요청이 있을 때, 빠른 부분은 사용자에게 먼저 보여주고, 느린 부분은 준비되는 대로 추가적으로 렌더링
+- 사용자는 더 빠르게 초기 컨텐츠를 볼 수 있음
+- Next.js 에서 구현: 1. 페이지 수준에서 loading.tsx파일을 사용, 2. 컴포넌트 수준에서는 <Suspense> 사용
+
+1. 페이지 스트리밍 (`loading.tsx`)
+
+   - 구현 방법
+     1. 폴더 하위에 `loading.tsx` 파일 생성 (e.g. `/app/dashboard/loading.tsx`)
+        `loading.tsx` 파일에 loading skeletons 을 추가하면 사용자에게 로딩 중임을 표시할 수 있음 (loading skeletons: UI의 간소화된 버전)
+     2. route groups 사용
+        - 스트리밍이 dashboard 페이지에만 적용되고, 하위 페이지인 `/invoices/page.tsx` `/customers/page.tsx` 에 적용되지 않도록 대시 보드 폴더 안에 (overview) 폴더 생성 후 해당 폴더 내로 page.tsx, loading.tsx 파일 이동
+        - 괄호를 사용하여 새 폴더를 만들면 URL 경로에 포함되지 않음
+          `/dashboard/(overview)/page.tsx` === `/dashboard`
+
+2. 컴포넌트 스트리밍
+
+   - 구현 방법
+     1. 컴포넌트를 <Suspense> 로 감싸서 사용
+        렌더링을 느리게 하는 작업 (e.g. 데이터 요청)을 컴포넌트 내에서 하도록 함
+        해당 컴포넌트를 <Suspense> 로 감쌈
+        fallback 속성으로 로딩 화면 (e.g. skeleton) 전달
+     2. 컴포넌트 그룹화: <Wrapper> 컴포넌트 생성
+        여러개의 <Card> 가 있는 경우, 각 컴포넌트 마다 <Suspense>로 감싸는 것 보다, 여러개의 <Card> 컴포넌트를 감싸는 <CardWrapper> 컴포넌트 생성 후 해당 컴포넌트를 <Suspense>로 감싸는것이 더 나음
+
+3. Suspense 경계를 어디에 위치하는 것이 좋을까?
+
+   - 고려 사항
+     - 페이지가 스트리밍될 때 사용자가 페이지를 어떻게 경험하길 원하는지
+     - 어떤 콘텐츠를 우선시하고 싶은지
+     - 컴포넌트가 데이터 패칭에 의존하는지
+   - 하지만 정답은 없다
