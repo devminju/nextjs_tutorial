@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 6, "column": 0}, "map": {"version":3,"sources":["file:///Users/minju/Documents/nextjs_tutorial/node_modules/.pnpm/next%4015.2.0-canary.45_react-dom%4019.0.0-rc-cd22717c-20241013_react%4019.0.0-rc-cd22717c-20241013_sgn4ceyzu6j7qf5dsvcbdndy5q/node_modules/next/navigation.js"],"sourcesContent":["module.exports = require('./dist/client/components/navigation')\n"],"names":[],"mappings":"AAAA,OAAO,OAAO","ignoreList":[0]}},
+    {"offset": {"line": 7, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":"A"}}]
+}

@@ -142,7 +142,7 @@ For more information, see the [course curriculum](https://nextjs.org/learn) on t
      - 요청 시간 정보: 쿠키나 URL 검색 매개변수 등 요청 시점에서만 알 수 있는 정보
    - 단점: 애플리케이션의 속도가 가장 느린 데이터 요청 속도에 따라 결정됨 (ch.8의 스트리밍으로 개선 가능)
 
-### Ch.8 [Streaming](https://nextjs.org/learn/dashboard-app/streaming)
+### Ch.9 [Streaming](https://nextjs.org/learn/dashboard-app/streaming)
 
 - 페이지를 한번에 렌더링 하는 것 대신, 'chunk' 단위로 나눈 후 각 chunk를 점진적으로 렌더링 하는 방식
 - 느린 데이터 요청이 있을 때, 빠른 부분은 사용자에게 먼저 보여주고, 느린 부분은 준비되는 대로 추가적으로 렌더링
@@ -176,3 +176,8 @@ For more information, see the [course curriculum](https://nextjs.org/learn) on t
      - 어떤 콘텐츠를 우선시하고 싶은지
      - 컴포넌트가 데이터 패칭에 의존하는지
    - 하지만 정답은 없다
+
+   ### Ch.10 [Partial Prerendering](https://nextjs.org/learn/dashboard-app/partial-prerendering)
+
+   - 동일 경로에서 정적 및 동적 렌더링 결합
+   - 아직 실험 단계 (Next.js 14)로, 프로덕션 모드에서는 사용 권장하지 않음
