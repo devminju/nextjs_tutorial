@@ -113,7 +113,7 @@ Object.defineProperty(exports, "HeadManagerContext", {
     }
 });
 const _interop_require_default = __turbopack_context__.r("[project]/node_modules/.pnpm/@swc+helpers@0.5.15/node_modules/@swc/helpers/cjs/_interop_require_default.cjs [app-client] (ecmascript)");
-const _react = /*#__PURE__*/ _interop_require_default._(__turbopack_context__.r("[project]/node_modules/.pnpm/next@15.2.0-canary.45_react-dom@19.0.0-rc-cd22717c-20241013_react@19.0.0-rc-cd22717c-20241013_sgn4ceyzu6j7qf5dsvcbdndy5q/node_modules/next/dist/compiled/react/index.js [app-client] (ecmascript)"));
+const _react = /*#__PURE__*/ _interop_require_default._(__turbopack_context__.r("[project]/node_modules/.pnpm/next@15.2.0-canary.45_react-dom@19.0.0-rc-cd22717c-20241013_react@19.0.0-rc-cd22717c-20241013_sgn4ceyzu6j7qf5dsvcbdndy5q/node_modules/next/dist/compiled/react-experimental/index.js [app-client] (ecmascript)"));
 const HeadManagerContext = _react.default.createContext({});
 if ("TURBOPACK compile-time truthy", 1) {
     HeadManagerContext.displayName = 'HeadManagerContext';
@@ -375,7 +375,7 @@ _export(exports, {
     }
 });
 const _interop_require_default = __turbopack_context__.r("[project]/node_modules/.pnpm/@swc+helpers@0.5.15/node_modules/@swc/helpers/cjs/_interop_require_default.cjs [app-client] (ecmascript)");
-const _react = /*#__PURE__*/ _interop_require_default._(__turbopack_context__.r("[project]/node_modules/.pnpm/next@15.2.0-canary.45_react-dom@19.0.0-rc-cd22717c-20241013_react@19.0.0-rc-cd22717c-20241013_sgn4ceyzu6j7qf5dsvcbdndy5q/node_modules/next/dist/compiled/react/index.js [app-client] (ecmascript)"));
+const _react = /*#__PURE__*/ _interop_require_default._(__turbopack_context__.r("[project]/node_modules/.pnpm/next@15.2.0-canary.45_react-dom@19.0.0-rc-cd22717c-20241013_react@19.0.0-rc-cd22717c-20241013_sgn4ceyzu6j7qf5dsvcbdndy5q/node_modules/next/dist/compiled/react-experimental/index.js [app-client] (ecmascript)"));
 const AppRouterContext = _react.default.createContext(null);
 const LayoutRouterContext = _react.default.createContext(null);
 const GlobalLayoutRouterContext = _react.default.createContext(null);
@@ -420,7 +420,7 @@ _export(exports, {
         return SearchParamsContext;
     }
 });
-const _react = __turbopack_context__.r("[project]/node_modules/.pnpm/next@15.2.0-canary.45_react-dom@19.0.0-rc-cd22717c-20241013_react@19.0.0-rc-cd22717c-20241013_sgn4ceyzu6j7qf5dsvcbdndy5q/node_modules/next/dist/compiled/react/index.js [app-client] (ecmascript)");
+const _react = __turbopack_context__.r("[project]/node_modules/.pnpm/next@15.2.0-canary.45_react-dom@19.0.0-rc-cd22717c-20241013_react@19.0.0-rc-cd22717c-20241013_sgn4ceyzu6j7qf5dsvcbdndy5q/node_modules/next/dist/compiled/react-experimental/index.js [app-client] (ecmascript)");
 const SearchParamsContext = (0, _react.createContext)(null);
 const PathnameContext = (0, _react.createContext)(null);
 const PathParamsContext = (0, _react.createContext)(null);
@@ -608,7 +608,7 @@ _export(exports, {
     }
 });
 const _interop_require_wildcard = __turbopack_context__.r("[project]/node_modules/.pnpm/@swc+helpers@0.5.15/node_modules/@swc/helpers/cjs/_interop_require_wildcard.cjs [app-client] (ecmascript)");
-const _react = /*#__PURE__*/ _interop_require_wildcard._(__turbopack_context__.r("[project]/node_modules/.pnpm/next@15.2.0-canary.45_react-dom@19.0.0-rc-cd22717c-20241013_react@19.0.0-rc-cd22717c-20241013_sgn4ceyzu6j7qf5dsvcbdndy5q/node_modules/next/dist/compiled/react/index.js [app-client] (ecmascript)"));
+const _react = /*#__PURE__*/ _interop_require_wildcard._(__turbopack_context__.r("[project]/node_modules/.pnpm/next@15.2.0-canary.45_react-dom@19.0.0-rc-cd22717c-20241013_react@19.0.0-rc-cd22717c-20241013_sgn4ceyzu6j7qf5dsvcbdndy5q/node_modules/next/dist/compiled/react-experimental/index.js [app-client] (ecmascript)"));
 const ServerInsertedHTMLContext = /*#__PURE__*/ _react.default.createContext(null);
 function useServerInsertedHTML(callback) {
     const addInsertedServerHTMLCallback = (0, _react.useContext)(ServerInsertedHTMLContext);
@@ -936,7 +936,7 @@ _export(exports, {
 });
 const _routerreducertypes = __turbopack_context__.r("[project]/node_modules/.pnpm/next@15.2.0-canary.45_react-dom@19.0.0-rc-cd22717c-20241013_react@19.0.0-rc-cd22717c-20241013_sgn4ceyzu6j7qf5dsvcbdndy5q/node_modules/next/dist/client/components/router-reducer/router-reducer-types.js [app-client] (ecmascript)");
 const _routerreducer = __turbopack_context__.r("[project]/node_modules/.pnpm/next@15.2.0-canary.45_react-dom@19.0.0-rc-cd22717c-20241013_react@19.0.0-rc-cd22717c-20241013_sgn4ceyzu6j7qf5dsvcbdndy5q/node_modules/next/dist/client/components/router-reducer/router-reducer.js [app-client] (ecmascript)");
-const _react = __turbopack_context__.r("[project]/node_modules/.pnpm/next@15.2.0-canary.45_react-dom@19.0.0-rc-cd22717c-20241013_react@19.0.0-rc-cd22717c-20241013_sgn4ceyzu6j7qf5dsvcbdndy5q/node_modules/next/dist/compiled/react/index.js [app-client] (ecmascript)");
+const _react = __turbopack_context__.r("[project]/node_modules/.pnpm/next@15.2.0-canary.45_react-dom@19.0.0-rc-cd22717c-20241013_react@19.0.0-rc-cd22717c-20241013_sgn4ceyzu6j7qf5dsvcbdndy5q/node_modules/next/dist/compiled/react-experimental/index.js [app-client] (ecmascript)");
 const _isthenable = __turbopack_context__.r("[project]/node_modules/.pnpm/next@15.2.0-canary.45_react-dom@19.0.0-rc-cd22717c-20241013_react@19.0.0-rc-cd22717c-20241013_sgn4ceyzu6j7qf5dsvcbdndy5q/node_modules/next/dist/shared/lib/is-thenable.js [app-client] (ecmascript)");
 function runRemainingActions(actionQueue, setState) {
     if (actionQueue.pending !== null) {
@@ -1888,7 +1888,7 @@ _export(exports, {
         return useDynamicRouteParams;
     }
 });
-const _react = /*#__PURE__*/ _interop_require_default(__turbopack_context__.r("[project]/node_modules/.pnpm/next@15.2.0-canary.45_react-dom@19.0.0-rc-cd22717c-20241013_react@19.0.0-rc-cd22717c-20241013_sgn4ceyzu6j7qf5dsvcbdndy5q/node_modules/next/dist/compiled/react/index.js [app-client] (ecmascript)"));
+const _react = /*#__PURE__*/ _interop_require_default(__turbopack_context__.r("[project]/node_modules/.pnpm/next@15.2.0-canary.45_react-dom@19.0.0-rc-cd22717c-20241013_react@19.0.0-rc-cd22717c-20241013_sgn4ceyzu6j7qf5dsvcbdndy5q/node_modules/next/dist/compiled/react-experimental/index.js [app-client] (ecmascript)"));
 const _hooksservercontext = __turbopack_context__.r("[project]/node_modules/.pnpm/next@15.2.0-canary.45_react-dom@19.0.0-rc-cd22717c-20241013_react@19.0.0-rc-cd22717c-20241013_sgn4ceyzu6j7qf5dsvcbdndy5q/node_modules/next/dist/client/components/hooks-server-context.js [app-client] (ecmascript)");
 const _staticgenerationbailout = __turbopack_context__.r("[project]/node_modules/.pnpm/next@15.2.0-canary.45_react-dom@19.0.0-rc-cd22717c-20241013_react@19.0.0-rc-cd22717c-20241013_sgn4ceyzu6j7qf5dsvcbdndy5q/node_modules/next/dist/client/components/static-generation-bailout.js [app-client] (ecmascript)");
 const _workunitasyncstorageexternal = __turbopack_context__.r("[project]/node_modules/.pnpm/next@15.2.0-canary.45_react-dom@19.0.0-rc-cd22717c-20241013_react@19.0.0-rc-cd22717c-20241013_sgn4ceyzu6j7qf5dsvcbdndy5q/node_modules/next/dist/server/app-render/work-unit-async-storage.external.js [app-client] (ecmascript)");

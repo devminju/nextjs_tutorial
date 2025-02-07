@@ -3174,7 +3174,9 @@ function restoreReducer(state, action) {
     // In this case, we'll continue to use the existing tree so the router doesn't get into an invalid state.
     const treeToRestore = tree || state.tree;
     const oldCache = state.cache;
-    const newCache = ("TURBOPACK compile-time falsy", 0) ? ("TURBOPACK unreachable", undefined) : oldCache;
+    const newCache = ("TURBOPACK compile-time truthy", 1) ? // prevents an unnecessary flash back to PPR state during a
+    // back/forward navigation.
+    (0, _pprnavigations.updateCacheNodeOnPopstateRestoration)(oldCache, treeToRestore) : ("TURBOPACK unreachable", undefined);
     var _extractPathFromFlightRouterState;
     return {
         // Set canonical url

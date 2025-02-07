@@ -176,7 +176,7 @@ const _setcachebustingsearchparam = __turbopack_context__.r("[project]/node_modu
 // @ts-ignore
 // eslint-disable-next-line import/no-extraneous-dependencies
 // import { createFromReadableStream } from 'react-server-dom-webpack/client'
-const { createFromReadableStream } = ("TURBOPACK compile-time falsy", 0) ? ("TURBOPACK unreachable", undefined) : __turbopack_context__.r("[project]/node_modules/.pnpm/next@15.2.0-canary.45_react-dom@19.0.0-rc-cd22717c-20241013_react@19.0.0-rc-cd22717c-20241013_sgn4ceyzu6j7qf5dsvcbdndy5q/node_modules/next/dist/compiled/react-server-dom-turbopack/client.js [app-client] (ecmascript)");
+const { createFromReadableStream } = ("TURBOPACK compile-time falsy", 0) ? ("TURBOPACK unreachable", undefined) : __turbopack_context__.r("[project]/node_modules/.pnpm/next@15.2.0-canary.45_react-dom@19.0.0-rc-cd22717c-20241013_react@19.0.0-rc-cd22717c-20241013_sgn4ceyzu6j7qf5dsvcbdndy5q/node_modules/next/dist/compiled/react-server-dom-turbopack-experimental/client.js [app-client] (ecmascript)");
 function urlToUrlWithoutFlightMarker(url) {
     const urlWithoutFlightParameters = new URL(url, location.origin);
     urlWithoutFlightParameters.searchParams.delete(_approuterheaders.NEXT_RSC_UNION_QUERY);
@@ -3205,7 +3205,9 @@ function restoreReducer(state, action) {
     // In this case, we'll continue to use the existing tree so the router doesn't get into an invalid state.
     const treeToRestore = tree || state.tree;
     const oldCache = state.cache;
-    const newCache = ("TURBOPACK compile-time falsy", 0) ? ("TURBOPACK unreachable", undefined) : oldCache;
+    const newCache = ("TURBOPACK compile-time truthy", 1) ? // prevents an unnecessary flash back to PPR state during a
+    // back/forward navigation.
+    (0, _pprnavigations.updateCacheNodeOnPopstateRestoration)(oldCache, treeToRestore) : ("TURBOPACK unreachable", undefined);
     var _extractPathFromFlightRouterState;
     return {
         // Set canonical url
@@ -3560,7 +3562,7 @@ const _cache = __turbopack_context__.r("[project]/node_modules/.pnpm/next@15.2.0
 // import { createFromFetch } from 'react-server-dom-webpack/client'
 // // eslint-disable-next-line import/no-extraneous-dependencies
 // import { encodeReply } from 'react-server-dom-webpack/client'
-const { createFromFetch, createTemporaryReferenceSet, encodeReply } = ("TURBOPACK compile-time falsy", 0) ? ("TURBOPACK unreachable", undefined) : __turbopack_context__.r("[project]/node_modules/.pnpm/next@15.2.0-canary.45_react-dom@19.0.0-rc-cd22717c-20241013_react@19.0.0-rc-cd22717c-20241013_sgn4ceyzu6j7qf5dsvcbdndy5q/node_modules/next/dist/compiled/react-server-dom-turbopack/client.js [app-client] (ecmascript)");
+const { createFromFetch, createTemporaryReferenceSet, encodeReply } = ("TURBOPACK compile-time falsy", 0) ? ("TURBOPACK unreachable", undefined) : __turbopack_context__.r("[project]/node_modules/.pnpm/next@15.2.0-canary.45_react-dom@19.0.0-rc-cd22717c-20241013_react@19.0.0-rc-cd22717c-20241013_sgn4ceyzu6j7qf5dsvcbdndy5q/node_modules/next/dist/compiled/react-server-dom-turbopack-experimental/client.js [app-client] (ecmascript)");
 async function fetchServerAction(state, nextUrl, param) {
     let { actionId, actionArgs } = param;
     const temporaryReferences = createTemporaryReferenceSet();

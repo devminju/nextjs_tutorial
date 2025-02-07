@@ -181,3 +181,27 @@ For more information, see the [course curriculum](https://nextjs.org/learn) on t
 
    - 동일 경로에서 정적 및 동적 렌더링 결합
    - 아직 실험 단계 (Next.js 14)로, 프로덕션 모드에서는 사용 권장하지 않음
+
+### Ch.11 [Adding Search and Pagination](https://nextjs.org/learn/dashboard-app/adding-search-and-pagination)
+
+- 검색 및 페이지네이션시 URL Search Parameters 를 이용하는 이유
+
+  - 북마크 및 URL 공유 가능: URL에 검색어, 필터 등의 정보가 있기 떄문
+  - 서버 렌더링: URL parameter에 서버가 접근하여 초기 렌더링 할 수 있음. SSR 처리 쉬워짐
+  - 사용자 행동 분석 및 추적 수월
+
+- Client 사용 Hook
+
+  - useSearchParams: 현재 URL의 parameter에 접근하는 hook
+  - usePathname: 현재 URL 경로 이름 반환
+  - useRouter: client component 내에서 경로 이동 및 탐색 가능
+    e.g. router.push(), router.replace(), router.refresh() 등
+  - app 라우터를 사용하는 경우 위의 hook 은 모두 `next/navigation` 에서 import 해야 한다. (x: next/router)
+
+- Server 사용 props
+
+  - searchParams: page.tsx 컴포넌트는 `params`와 `searchParams`를 인자로 전달 받는다.
+    다른 서버 컴포넌트에서 사용하기 원하는 경우 page 컴포넌트에서 전달해야한다.
+    page.tsx 컴포넌트를 client component 로 사용하고 싶은 경우 사용법이 달라진다.
+
+- Search 구현 팁: deounce 사용
